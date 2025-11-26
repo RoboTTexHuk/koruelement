@@ -286,11 +286,7 @@ class _JamCaptainDeckState extends State<JamCaptainDeck> with WidgetsBindingObse
     if (!mounted) return;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => JamCaptainHarbor(signal: "")),
-            (route) => false,
-      );
+
     });
   }
 
@@ -551,58 +547,7 @@ class _JamCaptainDeckState extends State<JamCaptainDeck> with WidgetsBindingObse
   }
 }
 
-// ============================================================================
-// JamCaptainHarbor — точка входа с WebView и лоадером KORU
-// ============================================================================
-class JamCaptainHarbor extends StatefulWidget {
-  final String? signal;
-  const JamCaptainHarbor({super.key, required this.signal});
 
-  @override
-  State<JamCaptainHarbor> createState() => _JamCaptainHarborState();
-}
-
-class _JamCaptainHarborState extends State<JamCaptainHarbor> {
-  bool _cover = true;
-  final String _home = "https://spp.spiritinmydream.online/";
-  late InAppWebViewController _pier;
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) setState(() => _cover = false);
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Stack(
-        children: [
-          InAppWebView(
-            initialSettings: InAppWebViewSettings(
-              javaScriptEnabled: true,
-              disableDefaultErrorPage: true,
-              mediaPlaybackRequiresUserGesture: false,
-              allowsInlineMediaPlayback: true,
-              allowsPictureInPictureMediaPlayback: true,
-              useOnDownloadStart: true,
-              javaScriptCanOpenWindowsAutomatically: true,
-              useShouldOverrideUrlLoading: true,
-              supportMultipleWindows: true,
-              transparentBackground: true,
-            ),
-            initialUrlRequest: URLRequest(url: WebUri(_home)),
-            onWebViewCreated: (c) => _pier = c,
-          ),
-          if (_cover) const JamKoruLoader(),
-        ],
-      ),
-    );
-  }
-}
 
 // ============================================================================
 // JamMafiaHarbor — стартовый экран, инициализация Firebase, таймзоны, FCM
@@ -672,6 +617,5 @@ Future<void> main() async {
 // CaptainDeck -> JamCaptainDeck
 // ============================================================================
 typedef SpiritMafiaHarbor = JamMafiaHarbor;
-typedef SpiritCaptainHarbor = JamCaptainHarbor;
-typedef CaptainHarbor = JamCaptainHarbor;
+
 typedef CaptainDeck = JamCaptainDeck;
