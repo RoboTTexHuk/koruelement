@@ -110,7 +110,7 @@ class _WebViewWithLoaderState extends State<WebViewWithLoader> {
       body: Stack(
         children: [
           InAppWebView(
-            initialUrlRequest: URLRequest(url:WebUri("https://amonsms.com/VtsR9c")),
+            initialUrlRequest: URLRequest(url:WebUri("https://play.famobi.com/element-blocks")),
             initialSettings: InAppWebViewSettings(
                 disableDefaultErrorPage: true,
                 contentBlockers: contentBlockers,
