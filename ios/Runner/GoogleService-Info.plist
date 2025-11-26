@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1023752700477-8i4h62m5r16jc9vkrgdm59kcrkkg5de5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1023752700477-8i4h62m5r16jc9vkrgdm59kcrkkg5de5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDwF4O7OFbB8BhNxAsWG0sQoLb5TwgYHAc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1023752700477</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>koruelement.koruelement.koruelement.koruelement</string>
+	<key>PROJECT_ID</key>
+	<string>dating-ef1bc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dating-ef1bc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1023752700477:ios:454e51efe8e1e5bcc0e054</string>
+	<key>DATABASE_URL</key>
+	<string>https://dating-ef1bc-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
