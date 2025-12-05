@@ -106,36 +106,43 @@ class _WebViewWithLoaderState extends State<WebViewWithLoader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
 
-      body: Stack(
-        children: [
-          InAppWebView(
-            initialUrlRequest: URLRequest(url:WebUri("https://play.famobi.com/element-blocks")),
-            initialSettings: InAppWebViewSettings(
-                disableDefaultErrorPage: true,
-                contentBlockers: contentBlockers,
-                ),
-            onLoadStart: (controller, url) {
-              setState(() {
-                _isLoading = true;
-              });
-            },
-            onLoadStop: (controller, url) async {
-              setState(() {
-                _isLoading = false;
-              });
-            },
-          ),
-          if (_isLoading)
-            Center(
-              child: LoadingIndicator(
-                indicatorType: Indicator.ballPulse,
-                colors: [Colors.blue],
-                strokeWidth: 5.0,
-                backgroundColor: Colors.transparent,
+      body: SafeArea(
+
+        child: Container(
+
+          child: Stack(
+            children: [
+              InAppWebView(
+                initialUrlRequest: URLRequest(url:WebUri("https://play.cosmoballs.cyou/")),
+                initialSettings: InAppWebViewSettings(
+                    disableDefaultErrorPage: true,
+                    contentBlockers: contentBlockers,
+                    ),
+                onLoadStart: (controller, url) {
+                  setState(() {
+                    _isLoading = true;
+                  });
+                },
+                onLoadStop: (controller, url) async {
+                  setState(() {
+                    _isLoading = false;
+                  });
+                },
               ),
-            ),
-        ],
+              if (_isLoading)
+                Center(
+                  child: LoadingIndicator(
+                    indicatorType: Indicator.ballPulse,
+                    colors: [Colors.blue],
+                    strokeWidth: 5.0,
+                    backgroundColor: Colors.transparent,
+                  ),
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }
