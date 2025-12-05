@@ -115,7 +115,7 @@ class _WebViewWithLoaderState extends State<WebViewWithLoader> {
           child: Stack(
             children: [
               InAppWebView(
-                initialUrlRequest: URLRequest(url:WebUri("https://play.cosmoballs.cyou/")),
+                initialUrlRequest: URLRequest(url:WebUri("https://play.famobi.com/element-blocks")),
                 initialSettings: InAppWebViewSettings(
                     disableDefaultErrorPage: true,
                     contentBlockers: contentBlockers,
